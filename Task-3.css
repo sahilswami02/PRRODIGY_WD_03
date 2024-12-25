@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #DDF8E8;
+}
+
+.game-container {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 110px);
+    grid-template-rows: repeat(3, 110px);
+    gap: 10px;
+    margin: 0 auto 20px;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 2px solid #333;
+    font-size: 2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cell:hover {
+    background-color: #f0f0f0;
+}
+
+.cell.taken {
+    cursor: not-allowed;
+    background-color: #F3FAE1;
+}
+
+.message {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.reset-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #323031;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reset-button:hover {
+    background-color: #0056b3;
+}
+
+/* Highlight winning cells */
+.winning-cell {
+    background-color: #078223; /* Green color for the win */
+    color: black;
+    animation: pulse 1s infinite;
+}
+
+/* Add a pulsing effect to winning cells */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Toggle AI mode styling */
+label {
+    font-size: 1em;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* AI feedback styles */
+.ai-thinking {
+    color: #dc3545; /* Red for AI thinking status */
+    font-style: italic;
+    margin-top: 10px;
+    font-size: 1.1em;
+    animation: blink 1s infinite;
+}
+
+/* Blinking animation for AI thinking */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
